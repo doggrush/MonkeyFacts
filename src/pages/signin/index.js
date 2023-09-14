@@ -21,7 +21,7 @@ export default function SignIn() {
         <TextInput placeholder="Digite um email..." style={styles.input} />
         <Text style={styles.title}>Senha</Text>
         <TextInput placeholder="Digite sua senha" style={styles.input} />
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Home')}>
           <Text style={styles.buttonText}>Acessar</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.buttonRegister}
@@ -36,7 +36,7 @@ export default function SignIn() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#38a69d'
+    backgroundColor: '#42aaf5'
   },
   containerHeader: {
     marginTop: '15%',
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   button:{
-    backgroundColor: '#38a69d',
+    backgroundColor: '#42aaf5',
     width: '100%',
     borderRadius: 4,
     paddingVertical: 8,

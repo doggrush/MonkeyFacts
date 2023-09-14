@@ -2,8 +2,10 @@ import React from "react"
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native"
 
 import * as Animatable from 'react-native-animatable'
+import { useNavigation } from '@react-navigation/native'
 
 export default function UserRegister() {
+  const navigation = useNavigation()
   return (
     <View style={styles.container}>
       <Animatable.View
@@ -16,14 +18,15 @@ export default function UserRegister() {
 
       <Animatable.View animation="fadeInUp" style={styles.containerForm}>
         <Text style={styles.title}>Email</Text>
-        <TextInput placeholder="Digite um email..." style={styles.input} />
+        <TextInput placeholder="Digite seu email" style={styles.input} />
+        
+        <TextInput placeholder="Confirme seu email" style={styles.input} />
         <Text style={styles.title}>Senha</Text>
         <TextInput placeholder="Digite sua senha" style={styles.input} />
-        <TouchableOpacity style={styles.button}>
-          <Text style={styles.buttonText}>Acessar</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.buttonRegister}>
-          <Text style={styles.registerText}>Não possui uma conta? Cadastre-se</Text>
+       
+        <TextInput placeholder="Confirme sua senha" style={styles.input} />
+        <TouchableOpacity style={styles.button}onPress={()=> navigation.navigate('SignIn')}>
+          <Text style={styles.buttonText}>Cadastrar-se</Text>
         </TouchableOpacity>
       </Animatable.View>
     </View>
@@ -33,7 +36,7 @@ export default function UserRegister() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#38a69d'
+    backgroundColor: '#42aaf5'
   },
   containerHeader: {
     marginTop: '15%',
@@ -64,7 +67,7 @@ const styles = StyleSheet.create({
     fontSize: 16
   },
   button:{
-    backgroundColor: '#38a69d',
+    backgroundColor: '#42aaf5',
     width: '100%',
     borderRadius: 4,
     paddingVertical: 8,
@@ -75,11 +78,7 @@ const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 18,
-    fontWeight: 'bold'
-  },
-  buttonRegister: {
-    marginTop: 14,
-    alignItems: 'center'
+    fontWeight: 'bold',
   },
   registerText: {
   color: '#a1a1a1'

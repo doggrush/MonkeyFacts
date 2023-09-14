@@ -4,7 +4,8 @@ import {
     Text, 
     StyleSheet, 
     Image,
-    TouchableOpacity
+    TouchableOpacity,
+    StatusBar
    } from 'react-native'
 
 import * as Animatable from 'react-native-animatable'
@@ -22,9 +23,9 @@ export default function Welcome(){
           resizeMode='contain'
         />
       </View>
-      
+      <StatusBar translucent backgroundColor="transparent" />  
       <Animatable.View delay={600} animation='fadeInUp' style={styles.containerForm}>
-        <Text style={styles.title}>Software para aprendizado do React Native</Text>
+        <Text style={styles.title}>FatosMacacos</Text>
         <Text style={styles.text}>Faça Login</Text>
 
         <TouchableOpacity 
@@ -41,11 +42,11 @@ export default function Welcome(){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#38A69D'
+    backgroundColor: '#42aaf5'
   },
   containerLogo: {
     flex: 2,
-    backgroundColor: '#38A69D',
+    backgroundColor: '#42aaf5',
     justifyContent: 'center',
     alignItems: 'center', 
   },
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
   },
   button: {
     position: 'absolute',
-    backgroundColor: '#38A69D',
+    backgroundColor: '#42aaf5',
     borderRadius: 50,
     paddingVertical: 8,
     width: '60%',
